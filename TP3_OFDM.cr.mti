@@ -1,0 +1,40 @@
+D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/corr_symbole_export_tb.vhd {2 {vcom -work work -2002 -explicit D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/corr_symbole_export_tb.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package log2_package
+-- Compiling entity corr_symbole_export_tb
+-- Compiling architecture exe2_tb_arch of corr_symbole_export_tb
+** Warning: D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/corr_symbole_export_tb.vhd(67): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
+
+** Warning: D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/corr_symbole_export_tb.vhd(68): (vcom-1194) FILE declaration was written using VHDL 1987 syntax.
+
+
+} {} {}} D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/log2_package.vhd {1 {vcom -work work -2002 -explicit D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/log2_package.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Compiling package log2_package
+-- Compiling package body log2_package
+-- Loading package log2_package
+
+} {} {}} corr_symbole_tb.vhd {2 {vcom -work work -2002 -explicit D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/corr_symbole_tb.vhd
+Model Technology ModelSim ALTERA vcom 10.1d Compiler 2012.11 Nov  2 2012
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package std_logic_arith
+-- Loading package STD_LOGIC_SIGNED
+-- Loading package log2_package
+-- Compiling entity corr_symbole_tb
+-- Compiling architecture corr_symbole_tb_arch of corr_symbole_tb
+** Warning: [4] D:/TPs/TP_FPGA_PDSP/PDSP/TP3_OFDM/corr_symbole_tb.vhd(59): (vcom-1207) An abstract literal and an identifier must have a separator between them.
+
+} {} {}}

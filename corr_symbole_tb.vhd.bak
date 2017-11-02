@@ -1,0 +1,62 @@
+LIBRARY ieee  ; 
+LIBRARY work  ; 
+USE ieee.std_logic_1164.all  ; 
+USE ieee.std_logic_arith.all  ; 
+USE ieee.STD_LOGIC_SIGNED.all  ; 
+USE work.log2_package.all  ; 
+
+ENTITY corr_symbole_tb  IS 
+  GENERIC (
+    gFFT_length  : POSITIVE   := 256 ;  
+    gBits  : POSITIVE   := 14 ;  
+    gGard_length  : POSITIVE   := 32 ); 
+END ; 
+ 
+ARCHITECTURE corr_symbole_tb_arch OF corr_symbole_tb IS
+  SIGNAL Corr_symbole_result   :  std_logic_vector ((gBits + Log2(gGard_length) - 1) downto 0)  ; 
+  SIGNAL In_re   :  std_logic_vector ((gBits - 1) downto 0)  ; 
+  SIGNAL CLK   :  STD_LOGIC  ; 
+  SIGNAL RSTn   :  STD_LOGIC  ; 
+  SIGNAL Enable   :  STD_LOGIC  ; 
+  --SIGNAL diff : std_logic_vector(gBits downto 0); --
+  COMPONENT corr_symbole  
+    GENERIC ( 
+      gFFT_length  : POSITIVE := 256 ; 
+      gBits  : POSITIVE := 14; 
+      gGard_length  : POSITIVE :=32 );  
+    PORT ( 
+      Corr_symbole_result  : out std_logic_vector ((gBits + Log2(gGard_length) - 1) downto 0) ; 
+      In_re  : in std_logic_vector ((gBits - 1) downto 0) ; 
+      CLK  : in STD_LOGIC ; 
+      RSTn  : in STD_LOGIC ; 
+      Enable  : in STD_LOGIC
+      --diff : out std_logic_vector(gBits downto 0) --
+       ); 
+  END COMPONENT ; 
+BEGIN
+  DUT  : corr_symbole  
+    GENERIC MAP ( 
+      gFFT_length  => gFFT_length  ,
+      gBits  => gBits  ,
+      gGard_length  => gGard_length   )
+    PORT MAP ( 
+      Corr_symbole_result   => Corr_symbole_result  ,
+      In_re   => In_re  ,
+      CLK   => CLK  ,
+      RSTn   => RSTn  ,
+      Enable   => Enable,
+      --diff => diff  
+       ) ; 
+      
+  RSTn <= '0', '1' after 500 ns;
+
+  process
+  begin
+    CLK <= '1'; wait for 62500 ns; -- Car 125µs / 2 puisque la période c 125µs
+    CLK <= '0'; wait for 62500 ns;
+  end process;
+      
+  In_re <= conv_std_logic_vector(20, 14), conv_std_logic_vector(50, 14) after 25ms;
+
+END corr_symbole_tb_arch; 
+

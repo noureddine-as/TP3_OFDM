@@ -1,0 +1,30 @@
+<interfaceDefinition version='1.2' language='vhdl' kind='component' name='corr_symbole'>
+  <useClause path='work.log2_package.all' />
+  <useClause path='ieee.STD_LOGIC_SIGNED.all' />
+  <useClause path='ieee.std_logic_arith.all' />
+  <useClause path='ieee.std_logic_1164.all' />
+    <macroList>
+
+      <macro name='gBits' type='POSITIVE' kind='' baseType='integer' initializer='14' />
+      <macro name='gFFT_length' type='POSITIVE' kind='' baseType='integer' initializer='256' />
+      <macro name='gGard_length' type='POSITIVE' kind='' baseType='integer' initializer='32' />
+
+    </macroList>
+    <portList>
+
+      <port name='CLK' direction='in' type='STD_LOGIC' kind='' />
+      <port name='Enable' direction='in' type='STD_LOGIC' kind='' />
+      <port name='RSTn' direction='in' type='STD_LOGIC' kind='' />
+      <port name='In_re' direction='in' type='std_logic_vector (gBits - 1 downto 0)' kind='array' library='work' package='corr_symbole' packedDimension=' (gBits - 1 downto 0)' />
+      <port name='Corr_symbole' direction='out' type='std_logic_vector (gBits +
+
+  *********** 2b UNKNOWN VECTOR EXPRESSION ***********  
+
+ - 1 downto 0)' kind='array' library='work' package='corr_symbole' packedDimension=' (gBits +
+
+  *********** 2b UNKNOWN VECTOR EXPRESSION ***********  
+
+ - 1 downto 0)' />
+
+    </portList>
+</interfaceDefinition>
